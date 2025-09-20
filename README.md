@@ -1,69 +1,163 @@
-# React + TypeScript + Vite
+# Expense Control App - Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Um aplicativo moderno para controle de gastos pessoais, construído com React, TypeScript e Tailwind CSS.
 
-Currently, two official plugins are available:
+## 🚀 Características
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Gerenciamento de Categorias**: Crie, edite e exclua categorias de gastos com cores personalizadas
+- **Controle de Transações**: Adicione, edite e remova transações organizadas por categoria
+- **Interface Responsiva**: Design moderno e responsivo usando Tailwind CSS
+- **Validação de Formulários**: Validação robusta com Zod e React Hook Form
+- **Estado Global**: Gerenciamento eficiente de estado com TanStack Query
 
-## Expanding the ESLint configuration
+## 🛠️ Tecnologias
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- **Framework**: React 19.1.1
+- **Linguagem**: TypeScript
+- **Build Tool**: Vite
+- **Estilização**: Tailwind CSS 4.1.13
+- **Componentes UI**: Radix UI
+- **Gerenciamento de Estado**: TanStack React Query
+- **Validação**: Zod + React Hook Form
+- **Ícones**: Lucide React
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## 📋 Pré-requisitos
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+- Node.js (versão 16 ou superior)
+- npm ou yarn
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## ⚡ Instalação e Execução
+
+1. **Clone o repositório**
+   ```bash
+   git clone <url-do-repositorio>
+   cd Expense-Control-App/frontend
+   ```
+
+2. **Instale as dependências**
+   ```bash
+   npm install
+   ```
+
+3. **Configure a API**
+
+   Certifique-se de que a API backend esteja rodando em `http://localhost:8080/api`
+
+4. **Execute o projeto**
+   ```bash
+   npm run dev
+   ```
+
+   O aplicativo estará disponível em `http://localhost:5173`
+
+## 📜 Scripts Disponíveis
+
+```bash
+# Desenvolvimento
+npm run dev
+
+# Build para produção
+npm run build
+
+# Preview da build
+npm run preview
+
+# Linting
+npm run lint
+npm run lint:fix
+
+# Formatação de código
+npm run format
+npm run format:check
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 🏗️ Estrutura do Projeto
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
 ```
+src/
+├── components/          # Componentes React
+│   ├── ui/             # Componentes de interface reutilizáveis
+│   ├── AddCategoryModal.tsx
+│   ├── CategoryManager.tsx
+│   ├── ExpensesByCategory.tsx
+│   └── ...
+├── hooks/              # Hooks customizados
+├── lib/                # Utilitários e validações
+├── services/           # Serviços de API
+├── types/              # Definições de tipos TypeScript
+└── App.tsx             # Componente principal
+```
+
+## 🔧 Funcionalidades
+
+### Categorias
+- Criar novas categorias com nome e cor
+- Editar categorias existentes
+- Excluir categorias (com confirmação)
+- Visualizar total de gastos por categoria
+
+### Transações
+- Adicionar transações com descrição, valor e categoria
+- Editar transações existentes
+- Excluir transações
+- Visualizar transações organizadas por categoria
+
+### Interface
+- **Aba Expenses**: Gerenciamento de transações por categoria
+- **Aba Categories**: Gerenciamento de categorias
+- **Aba Statistics**: Funcionalidade em desenvolvimento
+
+## 🎨 Design System
+
+O projeto utiliza um design system baseado em:
+- **Radix UI**: Componentes acessíveis e sem estilo
+- **Tailwind CSS**: Estilização utilitária
+- **CVA (Class Variance Authority)**: Variantes de componentes
+- **Lucide React**: Ícones consistentes
+
+## 🔌 API Integration
+
+O frontend consome uma API REST com os seguintes endpoints:
+
+### Categorias
+- `GET /api/categories` - Listar todas as categorias
+- `GET /api/categories/:id` - Buscar categoria por ID
+- `POST /api/categories` - Criar nova categoria
+- `PUT /api/categories/:id` - Atualizar categoria
+- `DELETE /api/categories/:id` - Excluir categoria
+
+### Transações
+- `POST /api/transactions` - Criar nova transação
+- `PUT /api/transactions/:id` - Atualizar transação
+- `DELETE /api/transactions/:id` - Excluir transação
+
+## 🧪 Qualidade de Código
+
+O projeto utiliza:
+- **ESLint**: Linting de código
+- **Prettier**: Formatação automática
+- **TypeScript**: Tipagem estática
+- **Zod**: Validação de esquemas
+
+## 📱 Responsividade
+
+O aplicativo é totalmente responsivo e funciona em:
+- Desktop
+- Tablet
+- Mobile
+
+## 🤝 Contribuição
+
+1. Faça o fork do projeto
+2. Crie uma branch para sua feature (`git checkout -b feature/AmazingFeature`)
+3. Commit suas mudanças (`git commit -m 'Add some AmazingFeature'`)
+4. Push para a branch (`git push origin feature/AmazingFeature`)
+5. Abra um Pull Request
+
+## 📄 Licença
+
+Este projeto está sob a licença MIT. Veja o arquivo `LICENSE` para mais detalhes.
+
+## 📞 Suporte
+
+Para dúvidas ou sugestões, abra uma issue no repositório.
