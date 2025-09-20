@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import { ExpensesByCategory } from '@/components/ExpensesByCategory'
 import { CategoryManager } from '@/components/CategoryManager'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
@@ -6,7 +5,6 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { Wallet, Settings, BarChart3 } from 'lucide-react'
 
 function App() {
-
   return (
     <div className="min-h-screen bg-background">
       <div className="container mx-auto p-4 max-w-6xl">
