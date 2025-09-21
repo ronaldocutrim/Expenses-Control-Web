@@ -20,6 +20,7 @@ Um aplicativo moderno para controle de gastos pessoais, construído com React, T
 - **Gerenciamento de Estado**: TanStack React Query
 - **Validação**: Zod + React Hook Form
 - **Ícones**: Lucide React
+- **Gráficos**: Recharts
 
 ## 📋 Pré-requisitos
 
@@ -105,7 +106,14 @@ src/
 ### Interface
 - **Aba Expenses**: Gerenciamento de transações por categoria
 - **Aba Categories**: Gerenciamento de categorias
-- **Aba Statistics**: Funcionalidade em desenvolvimento
+- **Aba Statistics**: Visualização de dados com gráficos interativos
+
+### Gráficos e Estatísticas
+- **Cards de Resumo**: Total de gastos, transações, média por transação e número de categorias
+- **Gráfico de Pizza**: Distribuição percentual de gastos por categoria
+- **Gráfico de Barras**: Comparação visual de gastos entre categorias
+- **Gráfico de Linha**: Tendência mensal de gastos (simulado)
+- **Tabela Detalhada**: Lista completa com percentuais e valores por categoria
 
 ## 🎨 Design System
 

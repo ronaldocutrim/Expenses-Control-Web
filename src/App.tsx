@@ -1,6 +1,7 @@
 import { ExpensesByCategory } from '@/components/ExpensesByCategory'
 import { CategoryManager } from '@/components/CategoryManager'
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
+import { Statistics } from '@/components/Statistics'
+import { Card, CardHeader, CardTitle } from '@/components/ui/card'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { Wallet, Settings, BarChart3 } from 'lucide-react'
 
@@ -44,16 +45,7 @@ function App() {
           </TabsContent>
 
           <TabsContent value="stats">
-            <Card>
-              <CardHeader>
-                <CardTitle>Statistics</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="text-center text-muted-foreground py-8">
-                  Statistics feature coming soon!
-                </div>
-              </CardContent>
-            </Card>
+            <Statistics />
           </TabsContent>
         </Tabs>
       </div>
